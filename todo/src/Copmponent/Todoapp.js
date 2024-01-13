@@ -34,13 +34,16 @@ function todochange (i){
     <input typeof='text' placeholder='todo list' value={activity}  onChange={(e)=>setactivity(e.target.value)}/>
     <button onClick={addingtodo}>Add</button>
     <h1>todolist</h1>
-    {todolist ![] && }
-    <p key={i}>
+    {todolist!=[] && todolist.map((data,i)=>{
+      return(
+        <p key={i}>
         <div>{data}</div>
-        <button onClick={todochange}>delete</button>
-
-    </p>
-
+        <button onClick={()=>todochange(i)}>remove</button>
+        </p>
+      )
+     
+    })}
+   
 
 
 
